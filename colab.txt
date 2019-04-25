@@ -1,0 +1,41 @@
+https://course.fast.ai/start_colab.html
+has excellent instructions.
+
+Since each notebook imports the library built in previous notebooks, start with 00_exports.ipynb
+
+Here are the steps:
+) Sign into google drive 
+2) go to Colab welcome page
+https://colab.research.google.com/notebooks/welcome.ipynb#recent=true
+3) Click github tub then paste this url: 
+https://github.com/fastai/fastai_docs/blob/master/dev_course/dl2/00_exports.ipynb
+
+4) Select 00_exports.ipynb, click “File -> save a copy in drive”. The newly saved copy is automatically named “Copy of 00_exports.ipynb”. Close the original copy. Rename the newly saved copy to the original name, i.e. remove the “Copy of “ from the file name. This is because the end of the notebook has this line:
+!python notebook2script.py 00_exports.ipynb 
+If we have a different file name, it’ll say “can’t find notebook 00_exports.ipynb”
+
+5) runtime -> change runtime type -> GPU
+6) install fast.ai package and save data files by adding this cell (right after the cell that says %load_ext autoreload…):
+
+!curl -s https://course.fast.ai/setup/colab | bash
+from google.colab import drive
+drive.mount('/content/gdrive', force_remount=True)
+root_dir = "/content/gdrive/My Drive/"
+base_dir = root_dir + 'fastai-v3/'
+
+7) Move a script to your Google drive
+https://forums.fast.ai/t/running-lesson-8-in-google-colab/41457/3
+https://github.com/fastai/fastai_docs/blob/master/dev_course/dl2/notebook2script.py
+Click “raw”
+Right click, save as … It’ll save the file to your Download directory in your laptop
+Google drive, new file, upload, select the file in your Download directory in your laptop
+Move the file to from Google drive to “My Drive > Colab Notebook”
+8) From Google drive, create “exp” directory under “My Drive > Colab Notebook” by selecting “new folder” and type “exp” as the folder name.
+
+Then you’ll run 00_export.ipynb smoothly :)
+
+For notebook 10c_fb16.ipynb, add this cell at the beginning:
+!pip install git+https://github.com/NVIDIA/apex
+
+Each notebook imports the library built by the previous notebook, if you don’t want to run all the cells of each notebook, you can just run the last cell of each notebook to build the libraries.
+
