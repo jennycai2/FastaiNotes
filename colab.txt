@@ -14,7 +14,8 @@ https://github.com/fastai/fastai_docs/blob/master/dev_course/dl2/00_exports.ipyn
 
 4) Select 00_exports.ipynb, click “File -> save a copy in drive”. The newly saved copy is automatically named 
 “Copy of 00_exports.ipynb”. 
-Close the original copy. Rename the newly saved copy to the original name, i.e. remove the “Copy of “ from the file name. This is because the end of the notebook has this line:
+Close the original copy. Rename the newly saved copy to the original name, i.e. remove the “Copy of “ from the file name. 
+This is because the end of the notebook has this line:
 !python notebook2script.py 00_exports.ipynb 
 If we have a different file name, it’ll say “can’t find notebook 00_exports.ipynb”
 
@@ -36,12 +37,15 @@ Right click, save as … It’ll save the file to your Download directory in you
 Google drive, new file, upload, select the file in your Download directory in your laptop
 Move the file to from Google drive to “My Drive > Colab Notebook”
 
-8) From Google drive, create “exp” directory under “My Drive > Colab Notebook” by selecting “new folder” and type “exp” as the folder name.
+8) From Google drive, create “exp” directory under “My Drive > Colab Notebook” by 
+selecting “new folder” and type “exp” as the folder name.
 
 Then you’ll run 00_export.ipynb smoothly :)
 
 For notebook 10c_fb16.ipynb, add this cell at the beginning:
 !pip install git+https://github.com/NVIDIA/apex
 
-Each notebook imports the library built by the previous notebook, if you don’t want to run all the cells of each notebook, you can just run the last cell of each notebook to build the libraries.
+Each notebook imports the library built by the previous notebook, 
+if you don’t want to run all the cells of each notebook, i
+you can just run the last cell of each notebook to build the libraries.
 
